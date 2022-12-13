@@ -1,6 +1,6 @@
 ﻿//
 /*
-    Написать программу, которая из имеющегося массивастрок формирует
+    Написать программу, которая из имеющегося массива строк формирует
     массив из строк, длина которых меньше либо равна трём символам.
     Первоначальный массив можно ввести с клавиватуры, либо
     задать на страте выполнения алгоритма. При решении не 
@@ -18,7 +18,7 @@ string Get_Array(string a){
 
 int size = int.Parse(Console.ReadLine());
 int count = 0;
-int size2 = -1;
+int size2 = 0;
 
 string[] arr = new string[size];
 
@@ -36,14 +36,22 @@ Console.WriteLine(count);
 
 string[] farr = new string[count];
 
-if (count == 0){
-    Console.WriteLine(farr);
-} else {
-    for (int i = 0; i <= size; i++){
-        if (arr[i].Length <= 3){
+string[] Fun_arr(string[] mas){
+    for (int i = 0; i < mas.Length; i++){
+        if (mas[i].Length <= 3){
+            farr[size2] = mas[i];
             size2++;
-            farr[size2] = arr[i];
         }
     }
-    Console.WriteLine(farr);
+    return farr;
+}
+
+if (count == 0){
+    Console.WriteLine("В массиве нет строк меньше либо равных трём.");
+} else {
+    Fun_arr(arr);
+    for (int i = 0; i < farr.Length; i++){
+        Console.Write("{0} ", farr[i]);
+    }
+    
 }
