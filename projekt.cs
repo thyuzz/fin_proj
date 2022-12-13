@@ -41,7 +41,8 @@ string[] Fun_arr(string[] mas){
 }
 
 if (count == 0){
-    Console.WriteLine("В массиве нет строк меньше либо равных трём.");
+    farr[0] = " ";
+    Console.WriteLine(farr[0]);
 } else {
     Fun_arr(arr);
     for (int i = 0; i < farr.Length; i++){
